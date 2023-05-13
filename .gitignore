@@ -1,0 +1,46 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Visual Studio / MonoDevelop generated
+/*.csproj
+/*.unityproj
+/*.sln
+/*.suo
+/*.tmp
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.mdb
+/.vs/
+/.vscode/
+
+# Build pipeline generated
+/Builds/
+
+# UWP generated
+/Package/
+/UnityGenerated/
+
+# NuGet packages directory
+/packages/
+
+# Render textures
+/[Rr]ealtime[Tt]emp/
+
+# Play mode build folder
+/[Bb]uild/[Pp]lay[Ss]tandalone/
+
+# Cloud build folder
+/[Bb]uild/[Cc]loud/[Bb]uild/
+
+# Lightmaps in Scenes
+/*.[Ll]ight[Mm]aps.*
