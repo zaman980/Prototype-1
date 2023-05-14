@@ -6,8 +6,16 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+
+    public GameObject RearLights;
+
+    public float wheelspeed;
     public float turnspeed;
+
+    public List<Transform> wheelpoints;
     public float HorizontalInput;
+
+    public float ForwardInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +25,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         HorizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        transform.Translate(Vector3.right * Time.deltaTime * turnspeed * HorizontalInput);
+        ForwardInput = Input.GetAxis("Vertical");
+        if (ForwardInput < 0)
+        {
+            RearLights.SetActive(true);
+        }
+        else
+        {
+
+            RearLights.SetActive(false);
+        }
+        foreach (Transform x in wheelpoints)
+        {
+
+            x.Rotate(Vector3.right, Time.deltaTime * wheelspeed * ForwardInput);
+
+
+        }
+
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * ForwardInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnspeed * HorizontalInput);
 
     }
 }
