@@ -10,6 +10,9 @@ public class P3_Player_Controller : MonoBehaviour
     public float gravityModifier;
 
     public bool isOnGround = true;
+
+    public bool gameOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,17 @@ public class P3_Player_Controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        isOnGround = true;
+        if (other.gameObject.CompareTag("Ground"))
+        {
+
+            isOnGround = true;
+        }
+        else if (other.gameObject.CompareTag("Obstacle"))
+        {
+
+            gameOver = true;
+            Debug.Log("GameOver!");
+        }
     }
+
 }
